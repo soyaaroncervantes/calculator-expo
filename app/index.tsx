@@ -1,4 +1,4 @@
-import {StyleSheet, View} from 'react-native'
+import {View} from 'react-native'
 import {globalStyles} from "@/styles/styles";
 import Results from "@/components/calculator/Results";
 import ButtonTheme, {ColorsEnum} from "@/components/ButtonTheme";
