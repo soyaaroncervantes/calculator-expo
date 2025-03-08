@@ -13,9 +13,10 @@ interface Props extends PressableProps {
   onPress: () => void;
   backgroundColor?: ColorsEnum;
   textProps?: TextProps;
+  isDouble?: boolean;
 }
 
-const ButtonTheme = ({label, backgroundColor = ColorsEnum.dark, onPress, ...rest}: Props) => {
+const ButtonTheme = ({label, backgroundColor = ColorsEnum.dark, onPress, isDouble = false, ...rest}: Props) => {
   return (
     <Pressable
       style={({pressed}) => [
@@ -23,7 +24,8 @@ const ButtonTheme = ({label, backgroundColor = ColorsEnum.dark, onPress, ...rest
         backgroundColor === ColorsEnum.orange && {backgroundColor: Colors.orange},
         backgroundColor === ColorsEnum.dark && {backgroundColor: Colors.darkGray},
         backgroundColor === ColorsEnum.light && {backgroundColor: Colors.textSecondary},
-        pressed && {opacity: 0.8}
+        pressed && {opacity: 0.7},
+        isDouble && {width: 180}, // width size plus margin inline both sides
       ]}
       onPress={onPress}
       {...rest}>
