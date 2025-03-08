@@ -16,10 +16,3 @@ const CalculatorApp = () => {
   )
 }
 export default CalculatorApp
-
-const styles = StyleSheet.create({
-  resultsContainer: {
-    gap: 5,
-    paddingBlockEnd: 20
-  }
-})
