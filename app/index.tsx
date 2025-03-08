@@ -1,17 +1,25 @@
-import {Text, View} from 'react-native'
+import {StyleSheet, View} from 'react-native'
 import {globalStyles} from "@/styles/styles";
+import Results from "@/components/calculator/Results";
+import ButtonTheme, {ColorsEnum} from "@/components/ButtonTheme";
 
 const CalculatorApp = () => {
   return (
     <View style={globalStyles.calculatorContainer}>
-      <Text
-        numberOfLines={1}
-        adjustsFontSizeToFit
-        style={globalStyles.mainResult}>
-        50 x 50505050505050505050
-      </Text>
-      <Text style={globalStyles.subResult}>250</Text>
+      <Results result='50 x 50505050505050505050' subResult='250'/>
+      <View>
+        <ButtonTheme
+          backgroundColor={ColorsEnum.orange}
+          label="1"/>
+      </View>
     </View>
   )
 }
 export default CalculatorApp
+
+const styles = StyleSheet.create({
+  resultsContainer: {
+    gap: 5,
+    paddingBlockEnd: 20
+  }
+})
