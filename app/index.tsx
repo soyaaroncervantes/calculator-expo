@@ -2,15 +2,21 @@ import {StyleSheet, View} from 'react-native'
 import {globalStyles} from "@/styles/styles";
 import Results from "@/components/calculator/Results";
 import ButtonTheme, {ColorsEnum} from "@/components/ButtonTheme";
+import {useCalculator} from "@/hooks/useCalculator";
 
 const CalculatorApp = () => {
+  const {
+    formula,
+    buildNumber,
+    cleanNumber
+  } = useCalculator();
   return (
     <View style={globalStyles.calculatorContainer}>
-      <Results result='50 x 50505050505050505050' subResult='250'/>
+      <Results result={formula} subResult='250'/>
       <View style={styles.container}>
         <View style={styles.row}>
           <ButtonTheme
-            onPress={console.log}
+            onPress={cleanNumber}
             backgroundColor={ColorsEnum.light}
             label="C"/>
           <ButtonTheme
@@ -28,13 +34,13 @@ const CalculatorApp = () => {
         </View>
         <View style={styles.row}>
           <ButtonTheme
-            onPress={console.log}
+            onPress={buildNumber}
             label="7"/>
           <ButtonTheme
-            onPress={console.log}
+            onPress={buildNumber}
             label="8"/>
           <ButtonTheme
-            onPress={console.log}
+            onPress={buildNumber}
             label="9"/>
           <ButtonTheme
             onPress={console.log}
@@ -43,13 +49,13 @@ const CalculatorApp = () => {
         </View>
         <View style={styles.row}>
           <ButtonTheme
-            onPress={console.log}
+            onPress={buildNumber}
             label="4"/>
           <ButtonTheme
-            onPress={console.log}
+            onPress={buildNumber}
             label="5"/>
           <ButtonTheme
-            onPress={console.log}
+            onPress={buildNumber}
             label="6"/>
           <ButtonTheme
             onPress={console.log}
@@ -58,13 +64,13 @@ const CalculatorApp = () => {
         </View>
         <View style={styles.row}>
           <ButtonTheme
-            onPress={console.log}
+            onPress={buildNumber}
             label="1"/>
           <ButtonTheme
-            onPress={console.log}
+            onPress={buildNumber}
             label="2"/>
           <ButtonTheme
-            onPress={console.log}
+            onPress={buildNumber}
             label="3"/>
           <ButtonTheme
             onPress={console.log}
@@ -73,11 +79,11 @@ const CalculatorApp = () => {
         </View>
         <View style={styles.row}>
           <ButtonTheme
-            onPress={console.log}
+            onPress={buildNumber}
             isDouble
             label="0"/>
           <ButtonTheme
-            onPress={console.log}
+            onPress={buildNumber}
             label="."/>
           <ButtonTheme
             onPress={console.log}
