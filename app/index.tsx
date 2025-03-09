@@ -8,7 +8,8 @@ const CalculatorApp = () => {
   const {
     formula,
     buildNumber,
-    cleanNumber
+    cleanNumber,
+    toggleSign
   } = useCalculator();
   return (
     <View style={globalStyles.calculatorContainer}>
@@ -20,7 +21,7 @@ const CalculatorApp = () => {
             backgroundColor={ColorsEnum.light}
             label="C"/>
           <ButtonTheme
-            onPress={console.log}
+            onPress={toggleSign}
             backgroundColor={ColorsEnum.light}
             label="+/-"/>
           <ButtonTheme

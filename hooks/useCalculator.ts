@@ -24,6 +24,12 @@ export const useCalculator = () => {
     lastOperation.current = undefined;
   }
 
+  const toggleSign = () => {
+    if (!number.includes('-')) return setNumber(x => '-' + x);
+    const value = number.split('-').at(1);
+    return setNumber(value);
+  }
+
   const buildNumber = (numberStringify: string) => {
     if (number.includes('.') && numberStringify === '.') return;
 
@@ -42,6 +48,7 @@ export const useCalculator = () => {
     number,
     prevNumber,
     buildNumber,
-    cleanNumber
+    cleanNumber,
+    toggleSign
   }
 }
