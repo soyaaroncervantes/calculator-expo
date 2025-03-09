@@ -10,7 +10,6 @@ export const globalStyles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end',
     paddingBlockEnd: 20,
-    paddingInline: 20,
   },
   mainResult: {
     color: Colors.textPrimary,
