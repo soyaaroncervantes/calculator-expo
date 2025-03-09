@@ -9,7 +9,8 @@ const CalculatorApp = () => {
     formula,
     buildNumber,
     cleanNumber,
-    toggleSign
+    toggleSign,
+    deleteLastNumber
   } = useCalculator();
   return (
     <View style={globalStyles.calculatorContainer}>
@@ -25,7 +26,7 @@ const CalculatorApp = () => {
             backgroundColor={ColorsEnum.light}
             label="+/-"/>
           <ButtonTheme
-            onPress={console.log}
+            onPress={deleteLastNumber}
             backgroundColor={ColorsEnum.light}
             label="del"/>
           <ButtonTheme

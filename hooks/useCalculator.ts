@@ -30,13 +30,23 @@ export const useCalculator = () => {
     return setNumber(value);
   }
 
+  const deleteLastNumber = () => {
+    if (number.length === 1 ) return setNumber('0');
+    if (number.length === 2 && number.includes('-')) return setNumber('0');
+    const newNumber = number.split('').toSpliced(-1).join('');
+    return setNumber(newNumber);
+  }
+
   const buildNumber = (numberStringify: string) => {
     if (number.includes('.') && numberStringify === '.') return;
 
     if (number.startsWith('0') || number.startsWith('-0')) {
       if (numberStringify === '.') return setNumber(x => x + numberStringify);
       if (numberStringify === '0' && number.includes('.')) return setNumber(x => x + numberStringify);
-      if (numberStringify !== '0' && !number.includes('.')) return setNumber(numberStringify);
+      if (numberStringify !== '0' && !number.includes('.')) {
+        if (!number.includes('-')) return setNumber(numberStringify);
+        return setNumber('-' + numberStringify)
+      }
       if (numberStringify === '0' && !number.includes('.')) return;
     }
 
@@ -49,6 +59,7 @@ export const useCalculator = () => {
     prevNumber,
     buildNumber,
     cleanNumber,
-    toggleSign
+    toggleSign,
+    deleteLastNumber
   }
 }
