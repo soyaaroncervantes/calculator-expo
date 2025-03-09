@@ -11,7 +11,7 @@ export enum ColorsEnum {
 
 interface Props extends PressableProps {
   label: string;
-  onPress?: () => void;
+  onPress?: (label: string) => void;
   backgroundColor?: ColorsEnum;
   textProps?: TextProps;
   isDouble?: boolean;
@@ -19,9 +19,10 @@ interface Props extends PressableProps {
 
 const ButtonTheme = ({label, backgroundColor = ColorsEnum.dark, onPress, isDouble = false, ...rest}: Props) => {
   const onPressHandler = useCallback(() => {
-    void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-    onPress();
-  }, [onPress])
+    void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    onPress(label);
+  }, [onPress, label]);
+
   return (
     <Pressable
       style={({pressed}) => [
@@ -29,7 +30,7 @@ const ButtonTheme = ({label, backgroundColor = ColorsEnum.dark, onPress, isDoubl
         backgroundColor === ColorsEnum.orange && {backgroundColor: Colors.orange},
         backgroundColor === ColorsEnum.dark && {backgroundColor: Colors.darkGray},
         backgroundColor === ColorsEnum.light && {backgroundColor: Colors.textSecondary},
-        pressed && {opacity: 0.},
+        pressed && {opacity: 0.6},
         isDouble && {width: 180}, // width size plus margin inline both sides
       ]}
       onPress={onPressHandler}

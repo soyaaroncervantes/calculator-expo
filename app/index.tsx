@@ -10,77 +10,77 @@ const CalculatorApp = () => {
       <View style={styles.container}>
         <View style={styles.row}>
           <ButtonTheme
-            onPress={() => console.log('clear')}
+            onPress={console.log}
             backgroundColor={ColorsEnum.light}
             label="C"/>
           <ButtonTheme
-            onPress={() => console.log('switch sign')}
+            onPress={console.log}
             backgroundColor={ColorsEnum.light}
             label="+/-"/>
           <ButtonTheme
-            onPress={() => console.log('delete')}
+            onPress={console.log}
             backgroundColor={ColorsEnum.light}
             label="del"/>
           <ButtonTheme
-            onPress={() => console.log('divide')}
+            onPress={console.log}
             backgroundColor={ColorsEnum.orange}
             label="÷"/>
         </View>
         <View style={styles.row}>
           <ButtonTheme
-            onPress={() => console.log('7')}
+            onPress={console.log}
             label="7"/>
           <ButtonTheme
-            onPress={() => console.log('8')}
+            onPress={console.log}
             label="8"/>
           <ButtonTheme
-            onPress={() => console.log('9')}
+            onPress={console.log}
             label="9"/>
           <ButtonTheme
-            onPress={() => console.log('multiply')}
+            onPress={console.log}
             backgroundColor={ColorsEnum.orange}
             label="*"/>
         </View>
         <View style={styles.row}>
           <ButtonTheme
-            onPress={() => console.log('4')}
+            onPress={console.log}
             label="4"/>
           <ButtonTheme
-            onPress={() => console.log('5')}
+            onPress={console.log}
             label="5"/>
           <ButtonTheme
-            onPress={() => console.log('6')}
+            onPress={console.log}
             label="6"/>
           <ButtonTheme
-            onPress={() => console.log('subtract')}
+            onPress={console.log}
             backgroundColor={ColorsEnum.orange}
             label="-"/>
         </View>
         <View style={styles.row}>
           <ButtonTheme
-            onPress={() => console.log('1')}
+            onPress={console.log}
             label="1"/>
           <ButtonTheme
-            onPress={() => console.log('2')}
+            onPress={console.log}
             label="2"/>
           <ButtonTheme
-            onPress={() => console.log('3')}
+            onPress={console.log}
             label="3"/>
           <ButtonTheme
-            onPress={() => console.log('add')}
+            onPress={console.log}
             backgroundColor={ColorsEnum.orange}
             label="+"/>
         </View>
         <View style={styles.row}>
           <ButtonTheme
-            onPress={() => console.log('0')}
+            onPress={console.log}
             isDouble
             label="0"/>
           <ButtonTheme
-            onPress={() => console.log('decimal')}
+            onPress={console.log}
             label="."/>
           <ButtonTheme
-            onPress={() => console.log('equal')}
+            onPress={console.log}
             backgroundColor={ColorsEnum.orange}
             label="="/>
         </View>

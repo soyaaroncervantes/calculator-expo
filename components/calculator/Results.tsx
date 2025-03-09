@@ -18,6 +18,7 @@ export default Results
 const styles = StyleSheet.create({
   resultsContainer: {
     gap: 5,
-    paddingBlockEnd: 20
+    paddingBlockEnd: 20,
+    paddingInline: 20
   }
 })
