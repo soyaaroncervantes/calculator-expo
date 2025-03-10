@@ -7,14 +7,17 @@ import {useCalculator} from "@/hooks/useCalculator";
 const CalculatorApp = () => {
   const {
     formula,
+    prevNumber,
     buildNumber,
     cleanNumber,
     toggleSign,
-    deleteLastNumber
+    deleteLastNumber,
+    operations,
+    calculateResult
   } = useCalculator();
   return (
     <View style={globalStyles.calculatorContainer}>
-      <Results result={formula} subResult='250'/>
+      <Results result={formula} subResult={prevNumber}/>
       <View style={styles.container}>
         <View style={styles.row}>
           <ButtonTheme
@@ -30,7 +33,7 @@ const CalculatorApp = () => {
             backgroundColor={ColorsEnum.light}
             label="del"/>
           <ButtonTheme
-            onPress={console.log}
+            onPress={operations.divide}
             backgroundColor={ColorsEnum.orange}
             label="÷"/>
         </View>
@@ -45,7 +48,7 @@ const CalculatorApp = () => {
             onPress={buildNumber}
             label="9"/>
           <ButtonTheme
-            onPress={console.log}
+            onPress={operations.multiple}
             backgroundColor={ColorsEnum.orange}
             label="*"/>
         </View>
@@ -60,7 +63,7 @@ const CalculatorApp = () => {
             onPress={buildNumber}
             label="6"/>
           <ButtonTheme
-            onPress={console.log}
+            onPress={operations.subtract}
             backgroundColor={ColorsEnum.orange}
             label="-"/>
         </View>
@@ -75,7 +78,7 @@ const CalculatorApp = () => {
             onPress={buildNumber}
             label="3"/>
           <ButtonTheme
-            onPress={console.log}
+            onPress={operations.add}
             backgroundColor={ColorsEnum.orange}
             label="+"/>
         </View>
@@ -88,7 +91,7 @@ const CalculatorApp = () => {
             onPress={buildNumber}
             label="."/>
           <ButtonTheme
-            onPress={console.log}
+            onPress={calculateResult}
             backgroundColor={ColorsEnum.orange}
             label="="/>
         </View>

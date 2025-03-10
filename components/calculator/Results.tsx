@@ -10,7 +10,7 @@ const Results = ({result, subResult}: Props) => {
   return (
     <View style={styles.resultsContainer}>
       <TextTheme variant={Variants.h1}>{result}</TextTheme>
-      <TextTheme variant={Variants.h2}>{subResult}</TextTheme>
+      { result === subResult ? (<TextTheme variant={Variants.h2}> </TextTheme>) : <TextTheme variant={Variants.h2}>{subResult}</TextTheme>}
     </View>
   )
 }
